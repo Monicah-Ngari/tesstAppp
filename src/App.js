@@ -17,7 +17,7 @@ export default function App() {
             <strong>open sourced on Github</strong>
           </a>
           and{" "}
-          <a href="/">
+          <a href="https://spiffy-lollipop-feca24.netlify.app/">
             <strong>hosted on Netlify</strong>
           </a>
         </em>
