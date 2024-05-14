@@ -13,7 +13,7 @@ export default function App() {
             <strong>Monicah Ngari</strong>
           </a>{" "}
           and is{" "}
-          <a href="https://github.com/Monicah-Ngari/Test">
+          <a href="https://github.com/Monicah-Ngari/tesstAppp">
             <strong>open sourced on Github</strong>
           </a>
           and{" "}
