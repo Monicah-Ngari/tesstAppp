@@ -2,17 +2,14 @@ import React, { useState } from "react";
 
 export default function Units({ initialTemperature }) {
   const [temperature, setTemperature] = useState(initialTemperature);
-  const [unit, setUnit] = useState("C");
 
   const toggleUnit = (selectedUnit) => {
     if (selectedUnit === "C") {
       // Convert to Celsius if Celsius is selected
       setTemperature(((temperature - 32) * 5) / 9);
-      setUnit("C");
     } else {
       // Convert to Fahrenheit if Fahrenheit is selected
       setTemperature((temperature * 9) / 5 + 32);
-      setUnit("F");
     }
   };
 
@@ -20,11 +17,11 @@ export default function Units({ initialTemperature }) {
     <div className="Units">
       <span className="currentTemp mb-0">{Math.round(temperature)}</span>
       <span className="units">
-        <a href="#" onClick={() => toggleUnit("C")}>
+        <a href="/" onClick={() => toggleUnit("C")}>
           °C
         </a>
         <span>|</span>
-        <a href="#" onClick={() => toggleUnit("F")}>
+        <a href="/" onClick={() => toggleUnit("F")}>
           °F
         </a>
       </span>
