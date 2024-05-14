@@ -17,7 +17,6 @@ export default function Weather(props) {
       description: response.data.condition.description,
       icon: response.data.condition.icon_url,
       date: date,
-
       ready: true, // Set ready to true once data is fetched
     });
   }
@@ -70,7 +69,6 @@ export default function Weather(props) {
             </p>
 
             <div className="col-6">
-              {" "}
               <p>
                 <img src={weatherData.icon} alt="Weather Icon" />
               </p>
