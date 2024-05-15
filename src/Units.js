@@ -1,28 +1,35 @@
 import React, { useState } from "react";
 
 export default function Units({ initialTemperature }) {
-  const [temperature, setTemperature] = useState(initialTemperature);
+  const [units, setUnits] = useState("C");
 
-  const toggleUnit = (selectedUnit, event) => {
+  const getTemperature = () => {
+    if (units === "C") {
+      return Math.round(initialTemperature);
+    } else {
+      return Math.round((initialTemperature * 9) / 5 + 32);
+    }
+  };
+
+  const toggleUnit = (event) => {
     event.preventDefault(); // Prevent the default behavior of the links
-    if (selectedUnit === "C") {
-      // Convert to Celsius if Celsius is selected
-      setTemperature(((temperature - 32) * 5) / 9);
+    if (units === "C") {
+      setUnits("F");
     } else {
       // Convert to Fahrenheit if Fahrenheit is selected
-      setTemperature((temperature * 9) / 5 + 32);
+      setUnits("C");
     }
   };
 
   return (
     <div className="Units">
-      <span className="currentTemp mb-0">{Math.round(temperature)}</span>
+      <span className="currentTemp mb-0">{getTemperature()}</span>
       <span className="units">
-        <a href="/" onClick={(event) => toggleUnit("C", event)}>
+        <a href="/" onClick={(event) => toggleUnit(event)}>
           °C
         </a>
         <span>|</span>
-        <a href="/" onClick={(event) => toggleUnit("F", event)}>
+        <a href="/" onClick={(event) => toggleUnit(event)}>
           °F
         </a>
       </span>
